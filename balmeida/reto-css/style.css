@@ -142,7 +142,7 @@ body{
 	background:var(--brand--light-blue);
 	display:grid;
 	padding: 120px 40px 100px 40px;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(3,1fr);
 	position: relative;
 	bottom: 100px;
 	z-index: 0;
@@ -171,9 +171,12 @@ body{
 	--title-size:18px;
 	--subtitle-size:14px;
 	--text-size:12px;
-	--layout-width:600px;
+	--layout-width:100%;
   }
 
+body{
+	width:var(--layout-width);
+}
 
 .img__button:hover{
 	box-sizing: border-box;
@@ -246,7 +249,7 @@ body{
     
   }
   .footer{
-	padding: 60px 40px 100px 40px;
+	padding: 60px 0 100px 0;
     bottom: 0;
     position: relative;
     margin-top: 150px;
