@@ -3,7 +3,7 @@
 	margin:0px;
 	padding:0px;
 	font-family: 'Nunito Sans', sans-serif;
-//	border:1px solid;
+
 }
 
 
@@ -14,7 +14,7 @@
 	--brand-white:#fefefe;
 	--brand-black:#0d0d0d;
 	--brand--light-blue:#99c2ff;
-	--layout-width:1200px;
+	--layout-width:100%;
 	--brand-transparent:rgba(0,0,0,0);
 	--brand-transparent-background:rgba(0,0,0,0.4);
 }
@@ -22,6 +22,7 @@
 body{
 	font-size:13px;
 	width:var(--layout-width);
+	overflow-x: hidden;
 }
 
 .logo{
@@ -262,7 +263,7 @@ body{
   }
   
   .main-content{
-	padding: 5px 10px;
+	padding: 5px 4px;
 	max-height:250px;
 	display: flex;
     flex-wrap: wrap;
@@ -307,10 +308,11 @@ body{
     
   }
   .footer{
-	padding: 60px 0 100px 0;
+	padding: 60px 0 50px 0;
     bottom: 0;
     position: relative;
     margin-top: 150px;
+	min-width:325px;
   }
   
   .footer__content p{
