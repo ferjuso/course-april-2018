@@ -1,6 +1,7 @@
 'use strict';
 const URL = '../db.json';
 const URL_API= 'http://localhost:3000/homework';
+const serve = 'express';
 
 /**
  * @description function to validate if the answer is correct, once connected
@@ -44,3 +45,6 @@ const json = (response) => {
      errorHtml += `%${error.name}-${error.message}%`;
      document.getElementById('homeworkTable').innerHTML = errorHtml;
     });           
+
+  
+console.log (usage);

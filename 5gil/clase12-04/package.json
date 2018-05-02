@@ -4,12 +4,18 @@
   "description": "consumir una api ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server -p 8000"
+    "test": "echo \"Error: no test sied\" && exit 1",
+    "start": "http-server -p 8000",
+    "usage": "usage-libraries-validate"
   },
   "author": "Sandra Gil Rosales",
   "license": "MIT",
   "devDependencies": {
     "http-server": "^0.11.1"
+  },
+  "dependencies": {
+    "easy-front-build": "^0.2.3",
+    "express": "^4.16.3",
+    "usage-libraries-validate": "^0.1.0"
   }
 }

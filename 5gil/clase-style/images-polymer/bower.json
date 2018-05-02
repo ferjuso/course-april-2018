@@ -1,0 +1,18 @@
+{
+  "name": "images-polymer",
+  "main": "images-polymer.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "emo-ji": "wbinnssmith/emo-ji#^1.0.4",
+    "paper-button": "PolymerElements/paper-button#^2.1.1",
+    "codelab-components": "googlecodelabs/codelab-components#^3.0.0"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
+  }
+}
