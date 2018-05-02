@@ -2,16 +2,36 @@
 
 'use strict'
 
-const footerMobile = document.querySelector('.footer-mobile');
+let footerMobile = document.querySelector('.footer-mobile');
 
-const btnSearch = document.querySelector('.button_discover');
-const btnDownload = document.querySelector('.button_download');
-const btnEnjoy = document.querySelector('.button_enjoy');
+let btnSearch = document.querySelector('.button_discover');
+let btnDownload = document.querySelector('.button_download');
+let btnEnjoy = document.querySelector('.button_enjoy');
 
-const textSearch = document.querySelector('.mobile-text-1');
-const textDownload = document.querySelector('.mobile-text-2');
-const textEnjoy = document.querySelector('.mobile-text-3');
+let textSearch = document.querySelector('.mobile-text-1');
+let textDownload = document.querySelector('.mobile-text-2');
+let textEnjoy = document.querySelector('.mobile-text-3');
 
+let modal = document.querySelector('.modal');
+let btnSubscription = document.querySelector('.main-content__button');
+
+let btnRegister = document.querySelector('.modal__button');
+
+  
+btnSubscription.addEventListener('click', () => {
+	 modal.style.display = "block";
+  })
+
+
+btnRegister.addEventListener('click', () => {
+	 modal.style.display = "none";
+  })  
+  
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
  
  btnSearch.addEventListener('click', () => {
 	addCssClass(textSearch);
@@ -35,12 +55,12 @@ const textEnjoy = document.querySelector('.mobile-text-3');
 	footerMobile.classList.add('footer-mobile__active');
   })
 
- const removeCssClass = (element) => {
+ let removeCssClass = (element) => {
 	 element.classList.remove('active');
 	 element.classList.add('deactivated');
  }
  
- const addCssClass = (element) => {
+ let addCssClass = (element) => {
 	 
 	 element.classList.remove('deactivated');
 	 element.classList.add('active');
