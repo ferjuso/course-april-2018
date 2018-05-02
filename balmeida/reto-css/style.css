@@ -3,7 +3,7 @@
 	margin:0px;
 	padding:0px;
 	font-family: 'Nunito Sans', sans-serif;
-//	border:1px solid;
+
 }
 
 
@@ -14,14 +14,15 @@
 	--brand-white:#fefefe;
 	--brand-black:#0d0d0d;
 	--brand--light-blue:#99c2ff;
-	--layout-width:1200px;
+	--layout-width:100%;
 	--brand-transparent:rgba(0,0,0,0);
+	--brand-transparent-background:rgba(0,0,0,0.4);
 }
-
 
 body{
 	font-size:13px;
 	width:var(--layout-width);
+	overflow-x: hidden;
 }
 
 .logo{
@@ -142,7 +143,7 @@ body{
 	background:var(--brand--light-blue);
 	display:grid;
 	padding: 120px 40px 100px 40px;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(3,1fr);
 	position: relative;
 	bottom: 100px;
 	z-index: 0;
@@ -166,14 +167,75 @@ body{
 	padding:10px;
 }
 
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 5; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: var(--brand-transparent-background);
+}
+
+.modal-content {
+	display:flex;
+    flex-wrap:wrap;
+    flex-direction:column;
+    align-items:center;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.modal-content h1{
+	color:var(--brand--light-blue);
+}
+
+.modal-content p{
+	margin:15px;
+}
+
+.modal__button{
+	border:2px solid var(--brand--light-blue);
+    border-radius:5px;
+    color:var(--brand--light-blue);
+    background:var(--brad-white);
+    font-weigth:bold;
+    padding: 10px 25px;
+    
+}
+
+.modal__button:hover{
+	background:var(--brand--light-blue);
+	color:var(--brand-white);
+}
+
+.modal__button:focus {
+  outline: none;
+}
+
+
+.modal__button:active{
+  transform: translateY(1px);
+}
+
+
 @media screen and (max-width:767px){
 	:root{
 	--title-size:18px;
 	--subtitle-size:14px;
 	--text-size:12px;
-	--layout-width:600px;
+	--layout-width:100%;
   }
 
+body{
+	width:var(--layout-width);
+}
 
 .img__button:hover{
 	box-sizing: border-box;
@@ -201,7 +263,7 @@ body{
   }
   
   .main-content{
-	padding: 5px 10px;
+	padding: 5px 4px;
 	max-height:250px;
 	display: flex;
     flex-wrap: wrap;
@@ -246,10 +308,11 @@ body{
     
   }
   .footer{
-	padding: 60px 40px 100px 40px;
+	padding: 60px 0 50px 0;
     bottom: 0;
     position: relative;
     margin-top: 150px;
+	min-width:325px;
   }
   
   .footer__content p{
