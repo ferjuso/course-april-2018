@@ -1,0 +1,15 @@
+{
+  "name": "retofronted",
+  "version": "0.0.1",
+  "description": "clase reto frontend con css",
+  "main": "home.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server -p 8880"
+  },
+  "author": "Sandra Gil",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

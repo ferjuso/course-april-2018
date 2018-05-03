@@ -1,0 +1,95 @@
+<link rel="import" href="../polymer/polymer-element.html">
+
+<dom-module id="footer-polymer">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+
+      
+/*footer*/
+
+footer{
+    float: right;
+    text-align: center;
+    padding: 250px 100px 50px 100px;
+    display: grid;
+    grid-gap: 80px;
+    background-color: #0BC0C7;
+    color:whitesmoke;
+}  
+
+.footer__artDiscover{
+    grid-column: 1/2;
+}
+
+.footer__artDownload{
+    grid-column: 2/3;
+}
+
+.footer__artEnjoy{
+    grid-column: 3/4;
+}
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+
+    <footer class="footer">
+        <article class="footer__artDiscover">
+            <picture class="footer__imageDiscover">
+                <img src="../img/search-icon.png" alt="">
+            </picture>
+            <h3>Descubre</h3>
+            <p>
+                Encuentra tus libros favoritos en el catálogo de beek con
+                <b>más de 200,000</b> audiolibros disponibles.
+            </p>
+        </article>
+        <article class="footer__artDownload">
+            <picture class="footer__imageDownload">
+                <img src="../img/download-icon.png" alt="">
+            </picture>
+            <h3>Descarga</h3>
+            <p>
+                <b>Lleva contigo</b> siempre tus libros favoritos y no pares de escuchar.
+            </p>
+        </article>
+        <article class="footer__artEnjoy">
+            <picture class="footer__imageEnjoy">
+                <img src="../img/audio-icon.png" alt="">
+            </picture>
+            <h3>Disfruta</h3>
+            <p>
+                Disfruta de tus libros por
+                <b>$299</b> al mes en AudioBeeks.
+            </p>
+        </article>
+    </footer>
+
+
+  </template>
+
+  <script>
+    /**
+     * `footer-polymer`
+     * 
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FooterPolymer extends Polymer.Element {
+      static get is() { return 'footer-polymer'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'footer-polymer'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(FooterPolymer.is, FooterPolymer);
+  </script>
+</dom-module>

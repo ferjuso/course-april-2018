@@ -1,0 +1,229 @@
+/*normalizar para todos los navegadores*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Gamja Flower';
+    font-size: 20px;
+}
+
+/*crear variables*/
+:root {
+    --primay-color:#fea38d;
+    --rojo-sangriento: #e52929;
+    --black-relax:#192626; 
+    --azul-celeste:#36D7DC;
+    --default-text-size: 16px;
+    --layout-width: 1200px 
+}
+
+.navbar{
+    background-color: var(--black-relax);
+    height: 80px;
+}
+
+.navbar__container{
+    align-items: center;
+   /*background-color: #223fbe;*/
+    display: flex;
+    margin: 0 auto;
+    height: 100%;
+    max-width: var(--layout-width);
+    justify-content: space-around;
+}
+
+.navbar__links{
+    display: inline-block;
+}
+
+.navbar__item{
+    display: inline-block;
+    color: cornsilk;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 0px 25px;
+}
+
+.navbar__button,
+.navbar__button-mobile{
+    background-image: linear-gradient(var(--azul-celeste), blue);
+    background-color: var(--azul-celeste);
+    border: none;
+    border-radius: 4px;
+    color: whitesmoke;
+    cursor: pointer;
+    padding: 15px 30px;
+    transition: transfrom .5s;
+}
+
+.navbar__button-mobile{
+    display: none;
+}
+
+.navbar__button:focus {
+    outline: none;
+}
+
+.navbar__button:hover{
+    filter: brightness(110%);
+    box-shadow: 1px 1px 5px darkblue;
+}
+
+.navbar__button:active{
+transform: translateY(4px);
+}
+
+.navbar__item a{
+    color: cornsilk;
+    text-decoration: none;
+
+}
+
+.sidenav {
+    background-color:cornsilk;
+    position: fixed;
+    right: -300px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    width: 300px;
+    display: none;
+}
+
+.sidenav__links{
+    margin-top: 100px;
+    text-align: center;
+    list-style: none;
+}
+
+.sidenav__item a{
+    font-size: 16px;
+    margin: 20px 0;
+    text-decoration: none;
+    color: chocolate;
+}
+
+.sidenav-close{
+    font-size: 25px;
+    text-align: left;
+    padding: 30px;
+}
+
+.sidenav-active{
+    right:0;
+}
+
+div{
+    background-color: var(--primay-color);
+    display: inline-block;
+    height: 20px;
+}
+
+.cover {
+    /*background-image: url('./img/bicycle-bike.jpg');*/
+    background-image: radial-gradient(rgba(145, 169, 231, 0.5), #03002E),
+    url(./img/bicycle-bike.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 200px 0;
+}
+
+.cover__title,
+.cover__text {
+    color: aliceblue;
+}
+
+.container {
+ display: block;
+    margin: 0  auto;
+    max-width: var(--layout-width);
+}
+.grid-section{
+    display: grid;
+    /*grid-template-columns: 100px, 150px, 200px;
+    grid-template-columns: 40% repeat(2,30%);
+    grid-template-columns: 40% max-content 20% ;
+    */
+    grid-template-columns: 40% 20% 1fr;
+    grid-template-rows: repeat(2,1fr);
+    grid-gap: 5px;
+}
+
+    .grid-section img{
+        width: 100%;
+    }
+
+    .grid-section__first{
+        grid-column: 2/4;
+        grid-row: 1/2;
+    }
+    .grid-section__h3{
+        display: flex;
+        align-items: center;
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .grid-section__second{
+        grid-column: 2/4;
+        grid-row: 2/3;
+    }
+
+   .grid-section__text{
+        display: flex;
+        align-items: center;
+        grid-column: 1/2;
+        grid-row: 2/3;
+   }
+
+
+/*
+/*features queries
+cuando tu navegador no soporta algo, se pone en esta secion 
+@supports(display: grid){
+
+};*/
+
+/*1024-768- 425*/
+@media screen and ( max-width: 567px){
+    :root {
+        --primay-color:#223fbe;
+        --default-text-size: calc(val(default-text-size) - 2px);
+        --layout-width:calc(100% -32px);
+    }
+
+    .navbar__container{
+        justify-content: flex-end;
+        padding: 0 20px;
+    }
+
+    .sidenav{
+        display: none;
+    }
+
+    .navbar__button,
+    .navbar__links{
+        display: none;
+    }
+
+    .navbar__button-mobile{
+        display: initial;
+    }
+
+    .grid-section{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .grid-section__h3{
+        grid-column: auto;
+        grid-row: auto;
+
+    }
+    .grid-section__first{
+        grid-column: auto;
+        grid-row: auto;
+       }
+
+};
