@@ -1,0 +1,75 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../paper-checkbox/paper-checkbox.html">
+<link rel="import" href="../paper-tooltip/paper-tooltip.html">
+
+<dom-module id="temary-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+        .oculto{
+            display: none;
+        }
+        .mensaje:hover .oculto{
+            display: block;
+        }
+      .tachado{
+          text-decoration:line-through;}  
+    </style>
+    <div>
+        <slot name="temario"></slot>
+        <div id="container">
+            <template is="dom-repeat" items="[[newTemary]]" as="section" on-dom-change="createDescription">
+                <div>
+                    <div>
+                        <h2 id="tooltip-title">[[section.title]]</h2>
+                        <paper-tooltip for="tooltip-title" offset="0" target="tem"><p>[[section.descriptionTopic]]</p></paper-tooltip>
+                    </div> 
+                    <div id="tem"></div>
+                    <template is="dom-repeat" items="[[section.topics]]" as="subsection">
+                        <div>
+                            <paper-checkbox><h4 id="tooltip-sub">[[subsection.Subtitle]]</h4></paper-checkbox>
+                            <paper-tooltip for="tooltip-sub" offset="0"><p>[[subsection.descriptionSub]]</p></paper-tooltip>
+                        </div>
+                    </template>
+                    <!--
+                    <button onclick="lineThrough2(id-[[index]])" id="id-[[index]]">Click me</button>-->
+                </div>
+            </template>
+        </div>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * `temary-list`
+     * creation of a checklist of a several topics
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class TemaryList extends Polymer.Element {
+      static get is() { 
+          return 'temary-list'; 
+      }
+        
+      static get properties() {
+        return {
+          newTemary:{
+            type: Array,
+            value: []
+          }  
+        };
+      }
+        
+   
+       
+        
+          
+    }
+
+    window.customElements.define(TemaryList.is, TemaryList);
+  </script>
+</dom-module>

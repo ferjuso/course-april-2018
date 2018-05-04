@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>temary-list demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../temary-list.html">
+
+    <custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic temary-list demo</h3>
+      <demo-snippet>
+        <template>
+          <temary-list new-temary='[
+                                    {"title" : "Tema 1", "descriptionTopic" : "algo1", "topics" : 
+                                      [
+                                        {"Subtitle" : "Tema 1.1", "descriptionSub" : "algo1.1"},
+                                        {"Subtitle" : "Tema 1.2", "descriptionSub" : "algo1.2"},
+                                        {"Subtitle" : "Tema 1.3", "descriptionSub" : "algo1.3"}
+                                      ]
+                                    },
+                                    {"title" : "Tema 2", "descriptionTopic" : "algo2", "topics" : 
+                                      [
+                                        {"Subtitle" : "Tema 2.1", "descriptionSub" : "algo2.1"},
+                                        {"Subtitle" : "Tema 2.2", "descriptionSub" : "algo2.2"}
+                                      ]
+                                    }
+                                    ]'>
+              <div slot="temario">
+              <h1>
+                ..::TEMARIO::..
+              </h1>
+              </div>
+        </temary-list>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
